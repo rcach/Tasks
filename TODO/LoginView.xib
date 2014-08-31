@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6206.8"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LoginViewController" customModule="Tasks" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="VpK-Xd-1Ya" id="PrH-MS-9Pd"/>
+                <outlet property="errorLabel" destination="Dzu-d3-mya" id="Z4i-Z4-S0O"/>
+                <outlet property="loginButton" destination="SJs-Ht-zn9" id="ZL0-YG-3ac"/>
+                <outlet property="passwordTextField" destination="xCW-6w-pQ5" id="dz5-yG-QQd"/>
+                <outlet property="usernameTextField" destination="KKl-jy-szR" id="5ms-bY-TXy"/>
+                <outlet property="view" destination="c22-O7-iKe" id="Nh9-2y-pgJ"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="491"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KKl-jy-szR">
+                    <rect key="frame" x="45" y="350" width="230" height="32"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="0dT-Xw-j6G">
+                        <font key="font" size="16" name="AvenirNext-Regular"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="userDidTypeUsername:" target="-2" id="IPm-qx-2av"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TLj-2x-9ZQ">
+                    <rect key="frame" x="97" y="418" width="126" height="33"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Login to JIRA" id="hR7-KO-NYP">
+                        <font key="font" size="20" name="AvenirNext-Medium"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xCW-6w-pQ5">
+                    <rect key="frame" x="45" y="298" width="230" height="32"/>
+                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="SRE-rY-OHM">
+                        <font key="font" size="16" name="AvenirNext-Regular"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <allowedInputSourceLocales>
+                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                        </allowedInputSourceLocales>
+                    </secureTextFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="j0O-cS-s0S"/>
+                    </connections>
+                </secureTextField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SJs-Ht-zn9">
+                    <rect key="frame" x="206" y="228" width="75" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="63" id="JqF-lN-eRu"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ya7-ua-w3A">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="logIn:" target="-2" id="3Ym-Uw-Gz6"/>
+                    </connections>
+                </button>
+                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="VpK-Xd-1Ya">
+                    <rect key="frame" x="235" y="237" width="16" height="16"/>
+                </progressIndicator>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dzu-d3-mya">
+                    <rect key="frame" x="33" y="265" width="254" height="25"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="🙉  Sorry, could not log in to JIRA." id="2dY-a0-0SD">
+                        <font key="font" size="15" name="AvenirNext-Regular"/>
+                        <color key="textColor" red="0.98709654808044434" green="0.20807155966758728" blue="0.073281213641166687" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="VpK-Xd-1Ya" firstAttribute="centerX" secondItem="SJs-Ht-zn9" secondAttribute="centerX" constant="-0.5" id="0K7-d8-nJ1"/>
+                <constraint firstItem="xCW-6w-pQ5" firstAttribute="trailing" secondItem="SJs-Ht-zn9" secondAttribute="trailing" id="2I9-Um-hg9"/>
+                <constraint firstAttribute="centerX" secondItem="TLj-2x-9ZQ" secondAttribute="centerX" id="5n9-Ce-W7r"/>
+                <constraint firstItem="xCW-6w-pQ5" firstAttribute="leading" secondItem="KKl-jy-szR" secondAttribute="leading" id="7E6-xH-soj"/>
+                <constraint firstItem="KKl-jy-szR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="45" id="Elc-1t-ato"/>
+                <constraint firstItem="KKl-jy-szR" firstAttribute="top" secondItem="TLj-2x-9ZQ" secondAttribute="bottom" constant="36" id="HyA-B6-wBW"/>
+                <constraint firstItem="xCW-6w-pQ5" firstAttribute="top" secondItem="KKl-jy-szR" secondAttribute="bottom" constant="20" id="JyN-Sf-4Oy"/>
+                <constraint firstItem="xCW-6w-pQ5" firstAttribute="width" secondItem="KKl-jy-szR" secondAttribute="width" id="LPn-gk-QjT"/>
+                <constraint firstAttribute="trailing" secondItem="KKl-jy-szR" secondAttribute="trailing" constant="45" id="aaL-tZ-SMG"/>
+                <constraint firstItem="SJs-Ht-zn9" firstAttribute="top" secondItem="xCW-6w-pQ5" secondAttribute="bottom" constant="42" id="b9E-2w-iqN"/>
+                <constraint firstItem="Dzu-d3-mya" firstAttribute="top" secondItem="xCW-6w-pQ5" secondAttribute="bottom" constant="8" id="fXe-5l-vXr"/>
+                <constraint firstItem="Dzu-d3-mya" firstAttribute="width" secondItem="xCW-6w-pQ5" secondAttribute="width" constant="20" id="gix-NU-AmO"/>
+                <constraint firstItem="TLj-2x-9ZQ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="40" id="sXA-3I-4tG"/>
+                <constraint firstItem="Dzu-d3-mya" firstAttribute="centerX" secondItem="xCW-6w-pQ5" secondAttribute="centerX" id="uYO-fi-Tdt"/>
+                <constraint firstItem="VpK-Xd-1Ya" firstAttribute="centerY" secondItem="SJs-Ht-zn9" secondAttribute="centerY" constant="0.5" id="zno-xD-wrv"/>
+            </constraints>
+            <point key="canvasLocation" x="283" y="564.5"/>
+        </customView>
+    </objects>
+</document>
